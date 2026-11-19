@@ -1,10 +1,11 @@
 # [Stacy Frady] - Assignment 1 Unit Tests
+from enum import verify
 import sys, os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'code')))
-from solution import verify_soc_access
+from solution import verify_access, verify_access
 
 # Test 1: Wrong username
-assert verify_soc_access("hacker", "S3cur3_P@ss", 5) == "INTRUSION_DETECTED", "Failed wrong username check"
+assert verify_access("hacker", "S3cur3_P@ss", 5) == "INTRUSION_DETECTED", "Failed wrong username check"
 
 # Test 2: Wrong password
 assert verify_access("soc_admin", "wrong123", 5) == "INTRUSION_DETECTED", "Failed wrong password check"
